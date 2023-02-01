@@ -30,7 +30,7 @@ class ElasticConnector:
 
             for row in datareader:
                 doc = {
-                    "_index": "cnefe",
+                    "_index": f"{self._index}",
                     "_id": row[0],
                     "_source": {
                         'id_cnefe': row[0],
