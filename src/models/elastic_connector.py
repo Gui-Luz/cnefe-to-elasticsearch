@@ -29,6 +29,10 @@ class ElasticConnector:
             datareader = csv.reader(csvfile)
 
             for row in datareader:
+                try:
+                    numero = int(row[20])
+                except:
+                    numero = 0
                 doc = {
                     "_index": f"{self._index}",
                     "_id": row[0],
@@ -53,7 +57,7 @@ class ElasticConnector:
                         'tipo_logradouro': row[17],
                         'titulo_logradouro': row[18],
                         'nome_logradouro': row[19],
-                        'numero_imovel': row[20],
+                        'numero_imovel': numero,
                         'tipo_modificador': row[21],
                         'nome_primeiro_complemento': row[22],
                         'valor_primeiro_complemento': row[23],
