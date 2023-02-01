@@ -18,7 +18,7 @@ class ElasticConnector:
         return es_client
 
     def create_mapping(self):
-        print(f'[+] {datetime.now()} CREATING CNEFE INDEX MAPPING')
+        print(f'[+] {datetime.now()} CREATING {self._index} INDEX MAPPING')
         r = requests.put(f'{self._host}/{self._index}', json=mapping)
         print(f'[+] STATUS CODE: {r.status_code}')
         print(f'[+] TEXT: {r.text}')

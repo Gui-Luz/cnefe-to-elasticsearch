@@ -5,7 +5,7 @@ from elasticsearch import helpers
 if __name__ == '__main__':
     print(f'[+] {datetime.now()} STARTING PROGRAM')
     host = "http://localhost:9200"
-    index = 'cnefe'
+    index = 'cnefe_novo'
     filename = 'data/Cnefe2217All.csv'
 
     ec = ElasticConnector(host, index, filename)
