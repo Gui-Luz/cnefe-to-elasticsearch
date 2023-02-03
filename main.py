@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     ec = ElasticConnector(host, index, filename)
     ec.create_mapping()
-    helpers.bulk(ec.create_client(), ec.generate_docs())
+    helpers.bulk(ec.create_client(), ec.generate_docs(), raise_on_error=False, raise_on_exception=False, chunk_size=1000)
     print(f'[+] {datetime.now()} DONE!')
 
 
